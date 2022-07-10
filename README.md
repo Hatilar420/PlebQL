@@ -4,7 +4,7 @@ A simple graphQl Application on Nodejs using postgres and Apollo
 ## Steps to install
 
 1. Clone the repo
-2. run `npm init`
+2. run `npm install`
 3. create a `.env` with the fields `DATABASE_URL` and `WEATHER_API_KEY` and add their respective values
 4. run `npx prisma migrate dev` if working in dev enviroment else in production or testing enviroments run `npx prisma migrate deploy` to migrate the database schema.
 5. Start the server with `npm start`
