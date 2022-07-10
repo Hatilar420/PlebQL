@@ -41,6 +41,7 @@ type Weather {
 
 type Query {
     user(id : Int) : User
+    users : [User]
 }
 
 input CreateAccount {

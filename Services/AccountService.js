@@ -8,6 +8,22 @@ class AccountServices {
 
 
 
+    getAllUserAccounts = async() =>{
+
+        let userResult = await UserDomain.GetAllEntity()
+        let retArr = []
+        for(let i of userResult.Result){
+            let res_acc = await AccountDomain.GetEntityByPrismQuery({userId : i.id})
+            let ret_obj = {id : i.id, name : i.username, accounts: []}
+            for(let i of res_acc.Result){
+                let obj = await this._getIFSCAndWeatherDetails(i.bankNumber)
+                ret_obj.accounts.push(obj)
+            }
+            retArr.push(ret_obj)
+        }
+        return retArr
+    }
+
     getUserAccountAsync = async(id) =>{
         let result = await UserDomain.GetEntityById(parseInt(id))
         if(result.Result){

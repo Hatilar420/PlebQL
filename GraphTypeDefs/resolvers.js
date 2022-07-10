@@ -11,6 +11,12 @@ const resolvers = {
             throw new UserInputError('User not found')
         }
         return {id :res.Result.id, username : res.Result.name, accounts : res.Result.accounts }
+      },
+      async users(){
+        let res = await AccountServices.getAllUserAccounts()
+        return res.map(x =>{
+            return { id : x.id, username : x.name, accounts : x.accounts }
+        })
       }
     },
     Mutation : {
