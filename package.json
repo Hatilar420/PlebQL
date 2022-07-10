@@ -1,0 +1,22 @@
+{
+  "name": "graphqlproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prisma": "^4.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.0.0",
+    "apollo-server": "^3.9.0",
+    "axios": "^0.27.2",
+    "graphql": "^16.5.0",
+    "ifsc": "^2.0.8",
+    "nodemon": "^2.0.19"
+  }
+}
